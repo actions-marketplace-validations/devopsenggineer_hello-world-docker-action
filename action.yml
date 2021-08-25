@@ -8,9 +8,18 @@ inputs:
 outputs:
   time: # id of output
     description: 'The time we greeted you'
-runs: |
+runs: 
    #wget https://raw.githubusercontent.com/intesar/FX-Scripts/master/fx_job_invoke_script.sh?token=AHILVH7YY7DVETVRLYXBYJK6FK7TC -O fx_job_invoke_script.sh
    #chmod 755 fx_job_invoke_script.sh
    #cat fx_job_invoke_script.sh
-   pwd
-   ls
+   #pwd
+   #ls
+  using: "composite"
+  steps:
+    - run: ls
+      shell: bash
+    
+      run: pwd
+      shell: bash
+    - run: ls -ll
+      shell: bash
