@@ -1,19 +1,44 @@
 name: 'Hello World654'
-description: 'Greet someone and record the time'
+description: 'Greet someone'
 inputs:
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
     default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
-runs:    
+  random-number:
+    description: "Random number"
+    value: ${{ steps.random-number-generator.outputs.random-id }}
+runs:
   using: "composite"
   steps:
-    - run: echo "Welcome to github actions"
-      shell: bash    
-      run: pwd
+    - run: echo Hello ${{ inputs.who-to-greet }}.
       shell: bash
-    - run: ls -ll
+    - id: random-number-generator
+      run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
+    - run: ${{ github.action_path }}/goodbye.sh
+      shell: bash
+
+
+# name: 'Hello World654'
+# description: 'Greet someone and record the time'
+# inputs:
+#   who-to-greet:  # id of input
+#     description: 'Who to greet'
+#     required: true
+#     default: 'World'
+# outputs:
+#   time: # id of output
+#     description: 'The time we greeted you'
+# runs:    
+#   using: "composite"
+#   steps:
+#     - run: echo "Welcome to github actions"
+#       shell: bash    
+#       run: pwd
+#       shell: bash
+#     - run: ls -ll
+#       shell: bash
+
+
