@@ -22,7 +22,7 @@ runs:
          wget https://raw.githubusercontent.com/intesar/FX-Scripts/master/fx_job_invoke_script.sh?token=AHILVH7YY7DVETVRLYXBYJK6FK7TC -O fx_job_invoke_script.sh
          chmod 755 fx_job_invoke_script.sh
          cat fx_job_invoke_script.sh
-         ./fx_job_invoke_script.sh ${USERNAME} ${PASSWORD} ${JOBID} ${REGION} ${ENVIRONMENTID} ${PROJECTID}
+         #./fx_job_invoke_script.sh ${USERNAME} ${PASSWORD} ${JOBID} ${REGION} ${ENVIRONMENTID} ${PROJECTID}
       env:
         USERNAME: "mohd@apisec.ai"
         PASSWWORD: "Raasta@123!"
@@ -33,7 +33,7 @@ runs:
       shell: bash      
     - run: ${{ github.action_path }}/goodbye.sh ${GREET}
       env:
-        GREET: "TARGET"
+        GREET: ${GREET}
       shell: bash
 
 
