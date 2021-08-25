@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it      
       - name: Hello World654
-        uses: devopsenggineer/hello-world-docker-action@v1.3
+        uses: devopsenggineer/hello-world-docker-action@v1.3.1
 
 
       # Runs a single command using the runners shell
