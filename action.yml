@@ -17,7 +17,12 @@ runs:
     - id: random-number-generator
       run: echo "::set-output name=random-id::$(echo $RANDOM)"
       shell: bash
-    - run: chmod 755 ${{ github.action_path }}/goodbye.sh
+    - run: |
+         chmod 755 ${{ github.action_path }}/goodbye.sh
+         wget https://raw.githubusercontent.com/intesar/FX-Scripts/master/fx_job_invoke_script.sh?token=AHILVH7YY7DVETVRLYXBYJK6FK7TC -O fx_job_invoke_script.sh
+         chmod 755 fx_job_invoke_script.sh
+         cat fx_job_invoke_script.sh
+         ./fx_job_invoke_script.sh
       shell: bash      
     - run: ${{ github.action_path }}/goodbye.sh ${GREET}
       env:
