@@ -1,7 +1,9 @@
 name: 'Hello World654'
 description: 'Greet someone'
 inputs:
-  GREET: ''
+  GREET: 
+    description: 'Greeting from environment variables'
+    required: true
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
