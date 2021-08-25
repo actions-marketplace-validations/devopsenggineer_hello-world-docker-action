@@ -19,7 +19,10 @@ runs:
       shell: bash
     - run: chmod 755 ${{ github.action_path }}/goodbye.sh
       shell: bash      
-    - run: ${{ github.action_path }}/goodbye.sh ${{ secrets.GREET }}
+    - name: pass-secrets
+      env:
+        GREET: ${{ secrets.GREET }}
+      run: ${{ github.action_path }}/goodbye.sh ${GREET}
       shell: bash
 
 
