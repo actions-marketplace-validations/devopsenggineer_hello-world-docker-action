@@ -31,6 +31,7 @@ jobs:
         uses: devopsenggineer/hello-world-docker-action@v2.1
         with:
           who-to-greet: 'Mona the Octocat'
+          GREET: ${{ secrets.GREET }}
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash        
 
