@@ -1,6 +1,7 @@
 name: 'Hello World654'
 description: 'Greet someone'
 inputs:
+  GREET: ''
   who-to-greet:  # id of input
     description: 'Who to greet'
     required: true
@@ -32,8 +33,8 @@ runs:
         PROJECTID: "8a8084847b1f49cf017b3cdcb0f700fc"
       shell: bash      
     - run: ${{ github.action_path }}/goodbye.sh ${GREET}
-      env:
-        GREET: ${GREET}
+#      env:
+#        GREET: ${GREET}
       shell: bash
 
 
