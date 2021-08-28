@@ -26,14 +26,14 @@ jobs:
      # - name: Hello World654
      #   uses: devopsenggineer/hello-world-docker-action@v1.3.1
         
-      - uses: actions/checkout@v2
+      #- uses: actions/checkout@v2
       - id: foo
         uses: devopsenggineer/hello-world-docker-action@latest
         with:
           who-to-greet: 'Mona the Octocat1436!6143'
           GREET:  '${{ secrets.GREET }}'
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash        
+      #- run: echo random-number ${{ steps.foo.outputs.random-number }}
+      #  shell: bash        
 
 
       # Runs a single command using the runners shell
