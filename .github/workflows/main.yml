@@ -28,7 +28,7 @@ jobs:
         
       #- uses: actions/checkout@v2
       - id: foo
-        uses: devopsenggineer/hello-world-docker-action@latest
+        uses: devopsenggineer/hello-world-docker-action@2.7
         with:
           who-to-greet: 'Mona the Octocat1436!6143'
           GREET:  '${{ secrets.GREET }}'
