@@ -34,7 +34,9 @@ runs:
 #         ENVIRONMENTID: "8a80818a7ae6a306017ae7598caf1002"
 #         PROJECTID: "8a8084847b1f49cf017b3cdcb0f700fc"
 #       shell: bash      
-    - run: ${{ github.action_path }}/goodbye.sh ${{ inputs.GREET }}
+    - run: |
+          chmod 755 ${{ github.action_path }}/goodbye.sh
+          ${{ github.action_path }}/goodbye.sh ${{ inputs.GREET }}
 #      env:
 #        GREET: ${GREET}
       shell: bash
