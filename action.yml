@@ -1,13 +1,13 @@
 name: 'Hello World654'
 description: 'Greet someone'
 inputs:
-  GREET: 
-    description: 'Greeting from environment variables'
-    required: true
+#   GREET: 
+#     description: 'Greeting from environment variables'
+#     required: true
   who-to-greet:  # id of input
-    description: 'Who to greet'
+    description: 'Welcome to hyderabad'
     required: true
-    default: 'World'
+    default: 'Welcome to Hyderabad World!!!!'
 outputs:
   random-number:
     description: "Random number"
@@ -15,8 +15,8 @@ outputs:
 runs:
   using: "composite"
   steps:
-#    - run: echo Hello ${{ inputs.who-to-greet }}.
-#      shell: bash
+    - run: echo Hello ${{ inputs.who-to-greet }}.
+      shell: bash
 #    - id: random-number-generator
 #      run: echo "::set-output name=random-id::$(echo $RANDOM)"
 #      shell: bash
@@ -34,12 +34,12 @@ runs:
 #         ENVIRONMENTID: "8a80818a7ae6a306017ae7598caf1002"
 #         PROJECTID: "8a8084847b1f49cf017b3cdcb0f700fc"
 #       shell: bash      
-    - run: |
-          chmod 755 ${{ github.action_path }}/goodbye.sh
-          ${{ github.action_path }}/goodbye.sh ${{ inputs.GREET }}
-#      env:
-#        GREET: ${GREET}
-      shell: bash
+#     - run: |
+#           chmod 755 ${{ github.action_path }}/goodbye.sh
+#           ${{ github.action_path }}/goodbye.sh ${{ inputs.GREET }}
+# #      env:
+# #        GREET: ${GREET}
+#       shell: bash
 
 
 # name: 'Hello World654'
