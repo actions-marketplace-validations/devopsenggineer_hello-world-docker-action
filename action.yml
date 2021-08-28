@@ -15,11 +15,11 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello ${{ inputs.who-to-greet }}.
-      shell: bash
-    - id: random-number-generator
-      run: echo "::set-output name=random-id::$(echo $RANDOM)"
-      shell: bash
+#    - run: echo Hello ${{ inputs.who-to-greet }}.
+#      shell: bash
+#    - id: random-number-generator
+#      run: echo "::set-output name=random-id::$(echo $RANDOM)"
+#      shell: bash
 #     - run: |
 #          chmod 755 ${{ github.action_path }}/goodbye.sh
 #          wget https://raw.githubusercontent.com/intesar/FX-Scripts/master/fx_job_invoke_script.sh?token=AHILVH7YY7DVETVRLYXBYJK6FK7TC -O fx_job_invoke_script.sh
